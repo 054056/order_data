@@ -25,7 +25,7 @@ class Data:
         f = open(path, 'a')
         f.write("What is the ")
         f.write(order)
-        f.write(" natural number from the left")
+        f.write(" lowest natural number")
         f.write("?\n")
         f.write(str(i+1))
         f.write("\n")
