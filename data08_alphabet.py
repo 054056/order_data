@@ -40,7 +40,7 @@ class Data:
         f.write(sequence_str)
         f.write(" counting from the ")
         f.write(first_order)
-        f.write(" right to the left ")
+        f.write(" from the right to the left")
         f.write("?\n")
         f.write(str(sequence[length-first_order_number-second_order_number+1]))
         f.write("\n")
