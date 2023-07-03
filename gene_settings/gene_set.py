@@ -15,7 +15,7 @@ class GeneSet:
         """
         何個の整数を生成するか
         """
-        quantity = random.randint(3,100)
+        quantity = random.randint(5,100)
 
         return quantity
 
@@ -23,7 +23,7 @@ class GeneSet:
         """
         何個のアルファベットを生成するか
         """
-        quantity = random.randint(3,100)
+        quantity = random.randint(5,100)
 
         return quantity
 
@@ -123,6 +123,26 @@ class GeneSet:
         second = random.randint(first+1, length)
 
         return first, second
+
+
+    def between_skill3(self, length):
+        """
+        間の数(skill3)
+        """
+        first = random.randint(1, length-3)
+        second = random.randint(first+2, length)
+
+        return first, second
+
+
+    def skill3(self, length):
+        """
+        2番目と4番目の間で2番目はなんですか
+        """
+        first, second = self.between_skill3(length)
+        third = random.randint(1, abs(second - first-1))
+
+        return first, second, third
 
     def num_to_ord(self, num) -> str:
         """
