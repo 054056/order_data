@@ -9,7 +9,7 @@ __data__ = '2023/05/24(Created:2023/05/24)'
 
 from gene_settings.gene_set import GeneSet as gs
 
-class Data31:
+class Data:
     def main(self):
         train_path = 'data/train/data16_alphabet.txt'
         interporate_path = 'data/interporate/data16_alphabet.txt'
@@ -26,24 +26,28 @@ class Data31:
 
     def gene_question(self, sequence, path):
         length = len(sequence)
-        first_order_number = gs().order_number(length-2)
-        second_order_number = first_order_number + 2
+        first_order_number, second_order_number, third_order_number = gs().skill3(length)
         first_order = gs().num_to_ord(first_order_number)
         second_order = gs().num_to_ord(second_order_number)
+        third_order = gs().num_to_ord(third_order_number)
         sequence_str = gs().sequence_str(sequence)
 
+#What is the second in the alphabetical sequence a,b,c,d between the second and fourth?
         f = open(path, 'a')
-        f.write("What is order between the ")
-        f.write(first_order)
-        f.write(" from the right and the ")
-        f.write(second_order)
-        f.write(" from the right in the alphabetical sequence")
+        f.write("What is the ")
+        f.write(third_order)
+        f.write(" in the alphabetical sequence ")
         f.write(sequence_str)
+        f.write(" between the ")
+        f.write(first_order)
+        f.write(" from the right and ")
+        f.write(second_order)
+        f.write(" from the right")
         f.write("?\n")
-        f.write(str(sequence[length-first_order_number-1]))
+        f.write(str(sequence[length - second_order_number+third_order_number]))
         f.write("\n")
 
 
 if __name__ == "__main__":
-    data = Data31()
+    data = Data()
     data.main()

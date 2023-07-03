@@ -26,21 +26,25 @@ class Data:
 
     def gene_question(self, sequence, path):
         length = len(sequence)
-        first_order_number = gs().order_number(length-2)
-        second_order_number = first_order_number + 2
+        first_order_number, second_order_number, third_order_number = gs().skill3(length)
         first_order = gs().num_to_ord(first_order_number)
         second_order = gs().num_to_ord(second_order_number)
+        third_order = gs().num_to_ord(third_order_number)
         sequence_str = gs().sequence_str(sequence)
 
         f = open(path, 'a')
-        f.write("What is order between the ")
+        f.write("What is the ")
+        f.write(third_order)
+        f.write(" between the ")
         f.write(first_order)
         f.write(" and ")
         f.write(second_order)
-        f.write(" from the left in the sequence of numbers ")
+        f.write(" from the left of a sequence of ")
+        f.write(str(length))
+        f.write(" numbers ")
         f.write(sequence_str)
         f.write("?\n")
-        f.write(str(first_order_number+1))
+        f.write(str(sequence[first_order_number+third_order_number-1]))
         f.write("\n")
 
 
