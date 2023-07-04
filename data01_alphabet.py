@@ -33,7 +33,7 @@ class Data:
         f.write("What is the ")
         f.write(order)
         f.write(" of the ")
-        f.write(length)
+        f.write(str(length))
         f.write(" alphabetical sequence ")
         f.write(sequence_str)
         f.write("?\n")

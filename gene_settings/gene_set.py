@@ -174,3 +174,10 @@ class GeneSet:
                 combinations.append((var1, var2))
 
         return combinations
+
+
+    def skill3_natural(self, combi):
+        first_order_number, second_order_number = combi
+        third_number = random.randint(1,second_order_number-first_order_number-1)
+
+        return third_number
