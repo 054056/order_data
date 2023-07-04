@@ -13,7 +13,7 @@ class Data:
     def main(self):
         train_path = 'data/train/data21.txt'
         interporate_path = 'data/interporate/data21.txt'
-        combinations = gs.generate_combinations(self)
+        combinations = gs.generate_combinations_natural(self)
         train_combi = combinations[:160000]
         interporate_combi = combinations[160000:]
         for combi in train_combi:
