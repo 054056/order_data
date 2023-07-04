@@ -176,6 +176,18 @@ class GeneSet:
         return combinations
 
 
+    def generate_combinations_natural(self):
+        combinations = []
+        variables = list(range(1, 200000))
+
+        while len(combinations) < 200000:
+            var1, var2 = sorted(random.sample(variables, 2))
+            if (var1, var2) not in combinations and abs(var2-var1 <= 2):
+                combinations.append((var1, var2))
+
+        return combinations
+
+
     def skill3_natural(self, combi):
         first_order_number, second_order_number = combi
         third_number = random.randint(1,second_order_number-first_order_number-1)
